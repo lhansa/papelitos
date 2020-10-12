@@ -1,3 +1,1 @@
 library(shiny)
-
-papelitos <- c()
