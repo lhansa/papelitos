@@ -1,0 +1,18 @@
+Package: papelitos
+Title: Juego De Los Papelitos
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Leonardo",
+           family = "Hansa",
+           role = c("aut", "cre"),
+           email = "leonardo.hansa@pm.me",
+           comment = c(Twitter = "@l_hansa"))
+Description: Shiny App para jugar a Papelitos. Los jugadores introducen un listado de nombres, personajes, cosas, entidades, en fin, lo que sea, en una cesta. Por equipos, cada miembro saca un papelito y tiene que conseguir que los demás adivinen qué es lo que hay escrito (primera ronda con descripciones, segunda ronda con una sola palabra, tercera ronda con mímica).
+License: `use_mit_license()`, `use_gpl3_license()` or friends to
+    pick a license
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.0.0
+Imports: 
+    stringr
