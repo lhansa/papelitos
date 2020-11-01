@@ -15,7 +15,8 @@ shinyUI(fluidPage(
 
         # Show a plot of the generated distribution
         mainPanel(
-            introUI("comienzo")
+            introUI("comienzo"), 
+            cogerPapelitoUI("partida")
         )
     )
 ))

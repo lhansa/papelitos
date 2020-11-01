@@ -11,17 +11,24 @@ introUI <- function(id){
     )
 }
 
-introServer <- function(id, papelitos){
+introServer <- function(id){
 
     moduleServer(id, function(input, output, session){
       
-      papelitos <- eventReactive(input$a_la_cesta, {
-        setdiff(stringr::str_trim(unlist(strsplit(input$introducidos, ","))), 
-                "")
+      observeEvent(input$a_la_cesta, {
+        nuevos_papelitos <- setdiff(stringr::str_trim(unlist(strsplit(input$introducidos, ","))), 
+                                    "")
+        cesta$papelitos <- c(cesta$papelitos, nuevos_papelitos)
       })
       
       output$num_papelitos <- renderText({
-        sprintf("En total hay %i papelitos", length(papelitos()))
+        input$a_la_cesta
+        if(length(cesta$papelitos) == 0){
+          return(sprintf("Aún no hay papelitos en la cesta"))
+        } else {
+          return(sprintf("En total hay %i papelitos", length(cesta$papelitos))  )
+        }
+        
       })
       
     })
