@@ -1,7 +1,7 @@
 cogerPapelitoUI <- function(id){
   tagList(
     actionButton(NS(id, "saca_papelito"), "Saca papelito!"), 
-    textOutput(NS(id, "papelito_turno"))
+    uiOutput(NS(id, "papelito_turno"))
   )
   
 }
@@ -9,13 +9,16 @@ cogerPapelitoUI <- function(id){
 cogerPapelitoServer <- function(id){
   moduleServer(id, function(input, output, session){
     
-    output$papelito_turno <- renderText({
-      input$saca_papelito
+    output$papelito_turno <- renderUI({
+      
+      input$saca_papelito # Pulsar botón de sacar papelito
+      if(length(cesta$papelitos) == 0) return(HTML("<p></p>"))
+      
       papelito_sacado <- sample(cesta$papelitos, 1)
       cesta$papelitos <- setdiff(cesta$papelitos, papelito_sacado)
       cesta$usados <- c(cesta$usados, papelito_sacado)
       
-      return(papelito_sacado)
+      return(HTML(sprintf("<p align='center'>%s</p>", papelito_sacado)))
     })
     
     
