@@ -1,5 +1,6 @@
 shinyUI(fluidPage(
 
+    includeCSS("www/style.css"),
     # Application title
     titlePanel("Papelitos"),
 
@@ -11,9 +12,20 @@ shinyUI(fluidPage(
 
         # Show a plot of the generated distribution
         mainPanel(
-            introUI("comienzo"), 
+            fluidRow(
+                introUI("comienzo")
+            ),
             br(),
-            cogerPapelitoUI("partida")
+            fluidRow(
+                column(4,
+                    cogerPapelitoUI("partida")
+                ), 
+                column(4,
+                    timeUI("tiempo")
+                )
+                    
+            )
+            
         )
     )
 ))

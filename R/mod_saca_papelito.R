@@ -1,6 +1,8 @@
 cogerPapelitoUI <- function(id){
   tagList(
     actionButton(NS(id, "saca_papelito"), "Saca papelito!"), 
+    br(),
+    br(),
     uiOutput(NS(id, "papelito_turno"))
   )
   
@@ -18,7 +20,7 @@ cogerPapelitoServer <- function(id){
       cesta$papelitos <- setdiff(cesta$papelitos, papelito_sacado)
       cesta$usados <- c(cesta$usados, papelito_sacado)
       
-      return(HTML(sprintf("<p align='center'>%s</p>", papelito_sacado)))
+      return(HTML(sprintf("<div id=\"papelito\">%s</div>", papelito_sacado)))
     })
     
     
