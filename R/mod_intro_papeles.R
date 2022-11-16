@@ -11,11 +11,12 @@ introUI <- function(id){
     )
 }
 
-introServer <- function(id){
+introServer <- function(id, cesta){
 
     moduleServer(id, function(input, output, session){
       
       observeEvent(input$a_la_cesta, {
+        # updateTextInput(session,"service", "Application Component Name", value="")
         nuevos_papelitos <- setdiff(stringr::str_trim(unlist(strsplit(input$introducidos, ","))), 
                                     "")
         cesta$papelitos <- c(cesta$papelitos, nuevos_papelitos)
@@ -31,6 +32,8 @@ introServer <- function(id){
         
       })
       
+      # return reactive value cesta
+      cesta
     })
 
 }
