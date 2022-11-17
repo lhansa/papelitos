@@ -19,7 +19,7 @@ introUI <- function(id){
               "Mete papelitos:",
               placeholder = "el chico guapo de ayer, Caperucita Roja, ..."
     ),
-    actionButton(NS(id, "a_la_cesta"), label = "¡A la cesta!"),
+    actionButton(NS(id, "a_la_cesta"), label = "\u00a1A la cesta\u0021"),
     textOutput(NS(id, "num_papelitos"))
   )
 }
@@ -47,7 +47,7 @@ introServer <- function(id, cesta){
     output$num_papelitos <- renderText({
       input$a_la_cesta
       if(length(cesta$papelitos) == 0){
-        return(sprintf("Aún no hay papelitos en la cesta"))
+        return(sprintf("A\u00fan no hay papelitos en la cesta"))
       } else {
         return(sprintf("En total hay %i papelitos", length(cesta$papelitos))  )
       }

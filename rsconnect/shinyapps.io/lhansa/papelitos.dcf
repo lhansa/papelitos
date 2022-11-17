@@ -1,0 +1,13 @@
+name: papelitos
+title: papelitos
+username:
+account: lhansa
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 7662077
+bundleId: 6525765
+url: https://lhansa.shinyapps.io/papelitos/
+when: 1668707574.44382
+lastSyncTime: 1668707574.44385
+asMultiple: FALSE
+asStatic: FALSE

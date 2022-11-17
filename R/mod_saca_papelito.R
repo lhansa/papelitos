@@ -41,9 +41,9 @@ botonAccionServer <- function(id, cesta) {
       if(length(cesta$papelitos) == 0) {
         actionButton(NS(id, "nada"), "")
       } else if(length(cesta$papelitos) == length(cesta$usados)) {
-        actionButton(NS(id, "nueva_ronda"), "Nueva ronda!")
+        actionButton(NS(id, "nueva_ronda"), "Nueva ronda\u0021")
       } else {
-        actionButton(NS(id, "saca_papelito"), "Saca papelito!")
+        actionButton(NS(id, "saca_papelito"), "Saca papelito\u0021")
       }
     })
 
@@ -118,9 +118,9 @@ cuantosQuedanServer <- function(id, cesta) {
       if (length(cesta$papelitos) == 0) {
         return("")
       } else if (length(cesta$usados) == 0) {
-        return("La cesta está completa. Empieza a jugar :)")
+        return("La cesta est\u00e1 completa. Empieza a jugar :)")
       } else if (length(cesta$usados) == length(cesta$papelitos)) {
-        return("Ya no quedan papelitos. ¡Nueva ronda!")
+        return("Ya no quedan papelitos. \u00a1Nueva ronda\u0021")
       } else {
         n_cuantos_quedan <- length(cesta$papelitos) - length(cesta$usados)
         return(sprintf(

@@ -32,7 +32,7 @@ app_ui <- function(request) {
                    cogerPapelitoUI("partida")
             ),
             column(4,
-                   timeUI("tiempo")
+                   # timeUI("tiempo")
             )
 
           )
