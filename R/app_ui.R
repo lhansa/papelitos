@@ -10,7 +10,35 @@ app_ui <- function(request) {
     golem_add_external_resources(),
     # Your application UI logic
     fluidPage(
-      h1("papelitos")
+
+      # includeCSS("www/style.css"),
+      # Application title
+      titlePanel("Papelitos"),
+
+      # Sidebar with a slider input for number of bins
+      sidebarLayout(
+        sidebarPanel(
+          instruccionesUI("instrus")
+        ),
+
+        # Show a plot of the generated distribution
+        mainPanel(
+          fluidRow(
+            introUI("comienzo")
+          ),
+          br(),
+          fluidRow(
+            column(4,
+                   cogerPapelitoUI("partida")
+            ),
+            column(4,
+                   timeUI("tiempo")
+            )
+
+          )
+
+        )
+      )
     )
   )
 }
